@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Sidebar from "./Sidebar"
 import "./CollectionsPage.css"
-import Sidebar from "./Sidebar"
 import grunge from "../assets/grunge1.jpeg";
 import punk from "../assets/punk2.png";
 import goth from "../assets/goth.png";
@@ -105,14 +104,7 @@ const CollectionsPage = ({ onBack, onTeamClick, onContactClick }) => {
         onContactClick={handleContactClick}
       />
 
-      {/* Header Strip Tape */}
-      <div className="header-tape">
-        <div className="logo-strip">
-          {[...Array(20)].map((_, i) => (
-            <img key={i} src="/scandal-logo.png" alt="Scandal" className="logo-repeat" />
-          ))}
-        </div>
-      </div>
+
 
       {/* Top Section - Collection Moods */}
       <section className="collection-moods">

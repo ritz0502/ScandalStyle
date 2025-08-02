@@ -13,14 +13,6 @@
   overflow-x: hidden;
 }
 
-/* Header Strip Tape */
-.header-tape {
-  background: linear-gradient(45deg, #8b0000, #dc143c, #800020);
-  padding: 10px 0;
-  overflow: hidden;
-  border-bottom: 3px solid #4a0e0e;
-}
-
 .logo-strip {
   display: flex;
   animation: scroll 30s linear infinite;
