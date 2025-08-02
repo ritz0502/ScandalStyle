@@ -11,3 +11,78 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*arushi index.css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.criminal-couture {
+  min-height: 100vh;
+}
+
+.photo {
+    margin: 0px 0px 0px 70px;
+    height: 80px;
+    background-image: url(./assets/scandal.JPG);
+    background-size: contain;
+}
+
+.site-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 0px 20px;
+    background: #000;
+    border-bottom: 3px solid #ff0000;
+}
+
+.site-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 0 20px #ff0000;
+  margin-bottom: 10px;
+}
+
+.site-tagline {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #ccc;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #111;
+  border-top: 1px solid #333;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 40px 20px;
+  }
+
+  .site-title {
+    letter-spacing: 2px;
+  }
+
+  .site-tagline {
+    letter-spacing: 1px;
+  }
+}
