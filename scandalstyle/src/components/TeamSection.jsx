@@ -3,6 +3,7 @@ import "./TeamSection.css"
 import arushi from "../assets/arushi.JPG"
 import reetika from "../assets/reetika.jpeg"
 
+
 const teamMembers = [
   {
     id: 1,
