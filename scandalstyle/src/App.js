@@ -6,6 +6,7 @@ import { useState } from "react";
 import LoadingPage from "./components/LoadingPage";
 import TransitionPage from "./components/TransitionPage";
 import CriminalCouturePage from "./components/CriminalCouturePage";
+// import CollectionsPage from "./components/CollectionsPage";
 
 const App = () => {
   const [showLoading, setShowLoading] = useState(true);
@@ -29,6 +30,7 @@ const App = () => {
         <TransitionPage onTransitionEnd={handleTransitionComplete} />
       )}
       {showMain && <CriminalCouturePage />}
+      
     </>
   );
 };
