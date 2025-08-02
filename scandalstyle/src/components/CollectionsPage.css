@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Mozilla+Headline:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.collections-page {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Header Strip Tape */
+.header-tape {
+  background: linear-gradient(45deg, #8b0000, #dc143c, #800020);
+  padding: 10px 0;
+  overflow: hidden;
+  border-bottom: 3px solid #4a0e0e;
+}
+
+.logo-strip {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.logo-repeat {
+  height: 40px;
+  margin: 0 30px;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Collection Moods */
+.collection-moods {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px 40px;
+  
+}
+
+.mood-box {
+  position: relative;
+  width: 370px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.mood-box:hover {
+  transform: scale(1.05);
+}
+
+.mood-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  /* filter: brightness(0.7); */
+}
+
+.mood-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(139, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  z-index: 2;
+}
+
+.mood-overlay h3 {
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5rem;
+  /* font-weight: bold; */
+  color: #ffbdbd;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(219, 19, 19, 0.8);
+}
+
+.mood-overlay p {
+  font-size: 1rem;
+  color: #ffffff;
+  font-style: italic;
+}
+
+/* Vintage Heading */
+.vintage-heading {
+  text-align: center;
+  padding: 30px 0 40px;
+}
+
+.vintage-heading h2 {
+  font-size: 4rem;
+  color: #8b0000;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+.heading-line {
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(to right, #8b0000, #dc143c, #8b0000);
+  margin: 15px auto;
+}
+
+/* Vintage Showcase */
+.vintage-showcase {
+  display: flex;
+  gap: 30px;
+  padding: 0 40px 60px;
+  justify-content: center;
+}
+
+.showcase-box {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid #4a0e0e;
+}
+
+.showcase-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.showcase-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(220, 20, 60, 0.3));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  z-index: 2;
+}
+
+.showcase-content h3 {
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.showcase-content p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.explore-btn {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.explore-btn:hover {
+  background: #ffffff;
+  color: #8b0000;
+}
+
+/* Detailed Showcase */
+.detailed-showcase {
+  display: flex;
+  gap: 0px;
+  padding: 80px 40px;
+  align-items: center;
+  
+}
+
+.y2k-detailed {
+  flex: 2;
+}
+
+.carousel-container h3 {
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #dc143c;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Container that shows only one image at a time */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #1a1a1a;
+  overflow: hidden; /* This is crucial for hiding other images */
+  border: 2px solid #4a0e0e;
+}
+
+/* Inner container that holds all images and slides */
+.carousel-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out; /* The sliding animation */
+}
+
+/* The images themselves, each taking up 100% of the carousel width */
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0; /* Prevents images from shrinking */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(139, 0, 0, 0.8);
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 3;
+}
+
+.carousel-btn:hover {
+  background: rgba(220, 20, 60, 0.9);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4a0e0e;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #dc143c;
+}
+
+/* Adjacent Collections */
+.adjacent-collections {
+  flex: 1;
+  margin-top: 44px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+}
+
+/* Style for text-only boxes */
+.grid-item.text-only {
+  /* Inherits existing styles but without a background image */
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 5rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(139, 0, 0, 0.9));
+}
+
+/* Override existing overlay to center content */
+.centered-overlay {
+  background: none; /* Remove overlay background to use the .grid-item background */
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+}
+
+.grid-item {
+  position: relative;
+  height: 200px;
+  border-radius: 0px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #4a0e0e;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+transform: scale(1.05);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(139, 0, 0, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+.item-overlay h4 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.shop-now-btn {
+  background: #dc143c;
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.shop-now-btn:hover {
+  background: #8b0000;
+}
+
+/* Final Collections Showcase */
+.final-collections-showcase {
+  display: flex;
+  gap: 0px;
+  padding: 80px 40px;
+  align-items: center;
+}
+
+.grunge-detailed {
+  flex: 2;
+}
+
+.grunge-container h3 {
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #dc143c;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.grunge-container .carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #1a1a1a;
+  overflow: hidden;
+  border: 2px solid #4a0e0e;
+}
+
+.grunge-container .carousel-image {
+  width: 100%;
+  height: 100%;
+}
+
+.grunge-container .carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grunge-container .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Final Adjacent Collections */
+.final-adjacent-collections {
+  flex: 1;
+  margin-top: 44px;
+}
+
+.final-collection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+}
+
+.final-grid-item {
+  position: relative;
+  height: 200px;
+  border-radius: 0px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #4a0e0e;
+  transition: transform 0.3s ease;
+}
+
+.final-grid-item:hover {
+  transform: scale(1.05);
+}
+
+.final-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: brightness(0.7); */
+}
+
+.final-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(139, 0, 0, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+.final-item-overlay h4 {
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Update responsive design for final collections */
+@media (max-width: 1200px) {
+  .final-collections-showcase {
+    flex-direction: column;
+  }
+
+  .final-collection-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .final-collection-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .collection-moods {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .detailed-showcase {
+    flex-direction: column;
+  }
+
+  .collection-detailed {
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .vintage-showcase {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .showcase-box {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .mood-box {
+    width: 300px;
+    height: 350px;
+  }
+
+  .vintage-heading h2 {
+    font-size: 3rem;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+

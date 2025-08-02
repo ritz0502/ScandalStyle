@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import dressCaution from "../assets/dress.png";
-import cuffsImage from "../assets/cuffs.png";
+import cuffsImage from "../assets/hand.png";
 import lightning from "../assets/bolt.png";
 
 const LoadingPage = ({ onComplete }) => {
@@ -220,12 +220,12 @@ useEffect(() => {
 
         .background-handcuffs {
           position: absolute;
-          left: 10%;
+          left: -5%;
           top: 50%;
           transform: translateY(-50%);
-          width: 700px;
+          width: 1100px;
           height: auto;
-          opacity: 0.15;
+          opacity: 0.2;
           z-index: 1;
           pointer-events: none;
         }

@@ -1,0 +1,243 @@
+"use client"
+
+import { useState } from "react"
+import "./CollectionsPage.css"
+import grunge from "../assets/grunge1.jpeg";
+import punk from "../assets/punk2.png";
+import goth from "../assets/goth.png";
+import y2k from "../assets/y2k.png";
+import retro from "../assets/retro.jpeg";
+import y2k1 from "../assets/hi.png";
+import y2k2 from "../assets/hi2.png";
+import y2k3 from "../assets/hi3.png";
+import y2k4 from "../assets/hi4.png";
+import retro1 from "../assets/pls.jpg";
+import gr1 from "../assets/gr1.png";
+import gr2 from "../assets/gr2.png";
+import gr3 from "../assets/gr3.png";
+import gr4 from "../assets/gr4.png";
+import toxic from "../assets/rachel.jpg";
+import punky from "../assets/punky.jpg";
+import gothy from "../assets/gothy.jpg";
+
+
+const CollectionsPage = () => {
+  const [currentY2KImage, setCurrentY2KImage] = useState(0)
+  const [currentGrungeImage, setCurrentGrungeImage] = useState(0)
+
+  const y2kImages = [
+    y2k1,
+    y2k2,
+    y2k3,
+    y2k4,
+  ]
+
+  const grungeImages = [
+    gr2,
+    gr1,
+    gr3,
+    gr4,
+  ]
+
+  const nextY2KImage = () => {
+    setCurrentY2KImage((prev) => (prev + 1) % y2kImages.length)
+  }
+
+  const prevY2KImage = () => {
+    setCurrentY2KImage((prev) => (prev - 1 + y2kImages.length) % y2kImages.length)
+  }
+
+  const nextGrungeImage = () => {
+    setCurrentGrungeImage((prev) => (prev + 1) % grungeImages.length)
+  }
+
+  const prevGrungeImage = () => {
+    setCurrentGrungeImage((prev) => (prev - 1 + grungeImages.length) % grungeImages.length)
+  }
+
+
+  return (
+    <div className="collections-page">
+      {/* Header Strip Tape */}
+      <div className="header-tape">
+        <div className="logo-strip">
+          {[...Array(20)].map((_, i) => (
+            <img key={i} src="/scandal-logo.png" alt="Scandal" className="logo-repeat" />
+          ))}
+        </div>
+      </div>
+
+      {/* Top Section - Collection Moods */}
+      <section className="collection-moods">
+        <div className="mood-box grunge-mood">
+          <div className="mood-overlay">
+            <h3>GRUNGE</h3>
+            <p>Raw rebellion meets street elegance</p>
+          </div>
+          <img src={grunge} alt="Grunge Collection" />
+        </div>
+        <div className="mood-box punk-noir-mood">
+          <div className="mood-overlay">
+            <h3>PUNK NOIR</h3>
+            <p>Dark romance with an edge</p>
+          </div>
+          <img src={punk} alt="Punk Noir Collection" />
+        </div>
+        <div className="mood-box goth-glam-mood">
+          <div className="mood-overlay">
+            <h3>GOTH GLAM</h3>
+            <p>Luxurious darkness redefined</p>
+          </div>
+          <img src={goth} alt="Goth Glam Collection" />
+        </div>
+      </section>
+
+      {/* Mid-Page Heading */}
+      <div className="vintage-heading">
+        <h2>vintage vibes</h2>
+        <div className="heading-line"></div>
+      </div>
+
+      {/* Mid-Page Showcase */}
+      <section className="vintage-showcase">
+        <div className="showcase-box y2k-main">
+          <div className="showcase-content">
+            <h3>Y2K SCANDAL</h3>
+            <p>Futuristic nostalgia meets digital rebellion</p>
+            <button className="explore-btn">EXPLORE COLLECTION</button>
+          </div>
+          <img src={y2k} />
+        </div>
+        <div className="showcase-box retro-main">
+          <div className="showcase-content">
+            <h3>RETRO VIBES</h3>
+            <p>80s glamour with a scandalous twist</p>
+            <button className="explore-btn">EXPLORE COLLECTION</button>
+          </div>
+          <img src={retro}/>
+        </div>
+      </section>
+
+      {/* Detailed Y2K Scandal Showcase */}
+      <section className="detailed-showcase">
+        <div className="y2k-detailed">
+          <div className="carousel-container">
+            <h3>Y2K SCANDAL COLLECTION</h3>
+            <div className="carousel">
+              <button className="carousel-btn prev" onClick={prevY2KImage}>
+                ‹
+              </button>
+              <div className="carousel-image">
+                <img src={y2kImages[currentY2KImage] || "/placeholder.svg"} alt="Y2K Collection" />
+              </div>
+              <button className="carousel-btn next" onClick={nextY2KImage}>
+                ›
+              </button>
+            </div>
+            <div className="carousel-dots">
+              {y2kImages.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === currentY2KImage ? "active" : ""}`}
+                  onClick={() => setCurrentY2KImage(index)}
+                ></span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Adjacent Collections Grid */}
+        {/* Adjacent Collections Grid */}
+        <div className="adjacent-collections">
+          <div className="collection-grid">
+            {/* Top-Left: Text and button only */}
+            <div className="grid-item retro-vice-1 text-only">
+              <div className="item-overlay centered-overlay">
+                <h4>RETRO VIBES</h4>
+                <button className="shop-now-btn">SHOP NOW</button>
+              </div>
+            </div>
+
+            {/* Top-Right: Image only */}
+            <div className="grid-item retro-vice-2">
+              <img src={retro1} alt="Retro Vice" />
+            </div>
+
+            {/* Bottom-Left: Image only */}
+            <div className="grid-item toxic-90s-1">
+              <img src={toxic} alt="Toxic 90s" />
+            </div>
+
+            {/* Bottom-Right: Text and button only */}
+            <div className="grid-item toxic-90s-2 text-only">
+              <div className="item-overlay centered-overlay">
+                <h4>TOXIC 90S</h4>
+                <button className="shop-now-btn">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Collections Showcase */}
+      {/* Final Collections Showcase */}
+      <section className="final-collections-showcase">
+        <div className="grunge-detailed">
+          <div className="grunge-container">
+            <h3>GRUNGE REBELLION COLLECTION</h3>
+            <div className="carousel">
+              <button className="carousel-btn prev" onClick={prevGrungeImage}>
+                ‹
+              </button>
+              <div className="carousel-image">
+                <img src={grungeImages[currentGrungeImage] || "/placeholder.svg"} alt="Grunge Collection" />
+              </div>
+              <button className="carousel-btn next" onClick={nextGrungeImage}>
+                ›
+              </button>
+            </div>
+            <div className="carousel-dots">
+              {grungeImages.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === currentGrungeImage ? "active" : ""}`}
+                  onClick={() => setCurrentGrungeImage(index)}
+                ></span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Adjacent Collections Grid - Updated Structure */}
+        <div className="final-adjacent-collections">
+          <div className="final-collection-grid">
+            {/* Top-Left: Text and button only */}
+            <div className="final-grid-item punk-noir-1 text-only">
+              <div className="final-item-overlay">
+                <h4>PUNK NOIR</h4>
+                <button className="shop-now-btn">SHOP NOW</button>
+              </div>
+            </div>
+            {/* Top-Right: Image only */}
+            <div className="final-grid-item punk-noir-2">
+              <img src={punky} alt="Punk Noir" />
+            </div>
+            {/* Bottom-Left: Image only */}
+            <div className="final-grid-item goth-glam-1">
+              <img src={gothy} alt="Goth Glam" />
+            </div>
+            {/* Bottom-Right: Text and button only */}
+            <div className="final-grid-item goth-glam-2 text-only">
+              <div className="final-item-overlay">
+                <h4>GOTH GLAM</h4>
+                <button className="shop-now-btn">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default CollectionsPage

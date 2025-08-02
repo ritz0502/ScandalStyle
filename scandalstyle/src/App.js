@@ -5,6 +5,7 @@
 import { useState } from "react";
 import LoadingPage from "./components/LoadingPage";
 import TransitionPage from "./components/TransitionPage";
+// import CollectionsPage from "./components/CollectionsPage"; 
 
 const App = () => {
   const [showLoading, setShowLoading] = useState(true);
@@ -20,6 +21,7 @@ const App = () => {
       ) : (
         <TransitionPage />
       )}
+      {/* <CollectionsPage /> */}
     </>
   );
 };
