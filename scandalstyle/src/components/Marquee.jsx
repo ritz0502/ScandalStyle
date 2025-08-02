@@ -1,15 +1,19 @@
-"use client"
-
 import "./Marquee.css"
 import { useState, useEffect } from "react"
+import fashion1 from "../assets/fashion1.png";
+import fashion2 from "../assets/fashion2.jpeg";
+import fashion3 from "../assets/fashion3.jpeg";
+import fashion4 from "../assets/fashion4.webp";
+import fashion5 from "../assets/fashion5.webp";
+import fashion6 from "../assets/fashion6.jpeg";
 
 const fashionItems = [
-  { id: 1, image: "/src/assets/fashion1.png", title: "Rebel Leather" },
-  { id: 2, image: "/src/assets/fashion2.jpeg", title: "Gothic Elegance" },
-  { id: 3, image: "/src/assets/fashion3.jpeg", title: "Punk Essentials" },
-  { id: 4, image: "/src/assets/fashion4.webp", title: "Street Rebellion" },
-  { id: 5, image: "/src/assets/fashion5.webp", title: "Avant-Garde" },
-  { id: 6, image: "/src/assets/fashion6.jpeg", title: "Criminal Accessories" },
+  { id: 1, image: fashion1, title: "Rebel Leather" },
+  { id: 2, image: fashion2, title: "Gothic Elegance" },
+  { id: 3, image: fashion3, title: "Punk Essentials" },
+  { id: 4, image: fashion4, title: "Street Rebellion" },
+  { id: 5, image: fashion5, title: "Avant-Garde" },
+  { id: 6, image: fashion6, title: "Criminal Accessories" }
 ]
 
 export default function Marquee() {

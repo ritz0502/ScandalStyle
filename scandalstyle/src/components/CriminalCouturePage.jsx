@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect } from "react"
 import Marquee from "./Marquee"
 import TeamSection from "./TeamSection"
@@ -24,7 +22,7 @@ export default function CriminalCouturePage() {
         <Sidebar/>
       </header>
     
-    <TextAnimation/>
+      <TextAnimation/>
       <Marquee />
       <TeamSection />
 

@@ -1,18 +1,20 @@
 import { useState } from "react"
 import "./TeamSection.css"
+import arushi from "../assets/arushi.JPG"
+import reetika from "../assets/reetika.jpeg"
 
 const teamMembers = [
   {
     id: 1,
     name: "Arushi Jain",
     role: "Software Developer",
-    image: "/src/assets/arushi.JPG",
+    image: arushi,
   },
   {
     id: 2,
     name: "Reetika Gupta",
     role: "Software Developer",
-    image: "/src/assets/reetika.jpeg",
+    image: reetika,
   }
 ]
 
