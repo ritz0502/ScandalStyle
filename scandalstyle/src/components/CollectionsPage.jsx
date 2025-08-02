@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Sidebar from "./Sidebar"
 import "./CollectionsPage.css"
 import grunge from "../assets/grunge1.jpeg";
 import punk from "../assets/punk2.png";
@@ -57,15 +58,15 @@ const CollectionsPage = () => {
 
 
   return (
+
     <div className="collections-page">
-      {/* Header Strip Tape */}
-      <div className="header-tape">
-        <div className="logo-strip">
-          {[...Array(20)].map((_, i) => (
-            <img key={i} src="/scandal-logo.png" alt="Scandal" className="logo-repeat" />
-          ))}
-        </div>
-      </div>
+
+      <header className="site-header">
+        <div className="photo"></div>
+        <Sidebar />
+      </header>
+
+
 
       {/* Top Section - Collection Moods */}
       <section className="collection-moods">
@@ -114,46 +115,46 @@ const CollectionsPage = () => {
             <p>80s and 90s classic glamour</p>
             <button className="explore-btn">EXPLORE COLLECTION</button>
           </div>
-          <img src={retro}/>
+          <img src={retro} />
         </div>
       </section>
 
       {/* Detailed Y2K Scandal Showcase */}
-<section className="detailed-showcase">
-  <div className="y2k-detailed">
-    <div className="carousel-container">
-      <h3>Y2K SCANDAL COLLECTION</h3>
-      <div className="carousel">
-        <button className="carousel-btn prev" onClick={prevY2KImage}>
-          ‹
-        </button>
-        {/* New inner container for all images with dynamic transform */}
-        <div
-          className="carousel-inner"
-          style={{ transform: `translateX(-${currentY2KImage * 100}%)` }}
-        >
-          {y2kImages.map((image, index) => (
-            <img key={index} src={image} alt={`Y2K Collection ${index + 1}`} />
-          ))}
+      <section className="detailed-showcase">
+        <div className="y2k-detailed">
+          <div className="carousel-container">
+            <h3>Y2K SCANDAL COLLECTION</h3>
+            <div className="carousel">
+              <button className="carousel-btn prev" onClick={prevY2KImage}>
+                ‹
+              </button>
+              {/* New inner container for all images with dynamic transform */}
+              <div
+                className="carousel-inner"
+                style={{ transform: `translateX(-${currentY2KImage * 100}%)` }}
+              >
+                {y2kImages.map((image, index) => (
+                  <img key={index} src={image} alt={`Y2K Collection ${index + 1}`} />
+                ))}
+              </div>
+              <button className="carousel-btn next" onClick={nextY2KImage}>
+                ›
+              </button>
+            </div>
+            <div className="carousel-dots">
+              {y2kImages.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === currentY2KImage ? "active" : ""}`}
+                  onClick={() => setCurrentY2KImage(index)}
+                ></span>
+              ))}
+            </div>
+          </div>
         </div>
-        <button className="carousel-btn next" onClick={nextY2KImage}>
-          ›
-        </button>
-      </div>
-      <div className="carousel-dots">
-        {y2kImages.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === currentY2KImage ? "active" : ""}`}
-            onClick={() => setCurrentY2KImage(index)}
-          ></span>
-        ))}
-      </div>
-    </div>
-  </div>
-  {/* The rest of the section remains the same */}
-  {/* ... adjacent collections ... */}
-  {/* Adjacent Collections Grid */}
+        {/* The rest of the section remains the same */}
+        {/* ... adjacent collections ... */}
+        {/* Adjacent Collections Grid */}
         {/* Adjacent Collections Grid */}
         <div className="adjacent-collections">
           <div className="collection-grid">
@@ -184,42 +185,42 @@ const CollectionsPage = () => {
             </div>
           </div>
         </div>
-</section>
+      </section>
 
       {/* Final Collections Showcase */}
       {/* Final Collections Showcase */}
       <section className="final-collections-showcase">
         <div className="grunge-detailed">
-  <div className="grunge-container">
-    <h3>GRUNGE REBELLION COLLECTION</h3>
-    <div className="carousel">
-      <button className="carousel-btn prev" onClick={prevGrungeImage}>
-        ‹
-      </button>
-      {/* New inner container for all images with dynamic transform */}
-      <div
-        className="carousel-inner"
-        style={{ transform: `translateX(-${currentGrungeImage * 100}%)` }}
-      >
-        {grungeImages.map((image, index) => (
-          <img key={index} src={image} alt={`Grunge Collection ${index + 1}`} />
-        ))}
-      </div>
-      <button className="carousel-btn next" onClick={nextGrungeImage}>
-        ›
-      </button>
-    </div>
-    <div className="carousel-dots">
-      {grungeImages.map((_, index) => (
-        <span
-          key={index}
-          className={`dot ${index === currentGrungeImage ? "active" : ""}`}
-          onClick={() => setCurrentGrungeImage(index)}
-        ></span>
-      ))}
-    </div>
-  </div>
-</div>
+          <div className="grunge-container">
+            <h3>GRUNGE REBELLION COLLECTION</h3>
+            <div className="carousel">
+              <button className="carousel-btn prev" onClick={prevGrungeImage}>
+                ‹
+              </button>
+              {/* New inner container for all images with dynamic transform */}
+              <div
+                className="carousel-inner"
+                style={{ transform: `translateX(-${currentGrungeImage * 100}%)` }}
+              >
+                {grungeImages.map((image, index) => (
+                  <img key={index} src={image} alt={`Grunge Collection ${index + 1}`} />
+                ))}
+              </div>
+              <button className="carousel-btn next" onClick={nextGrungeImage}>
+                ›
+              </button>
+            </div>
+            <div className="carousel-dots">
+              {grungeImages.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === currentGrungeImage ? "active" : ""}`}
+                  onClick={() => setCurrentGrungeImage(index)}
+                ></span>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Adjacent Collections Grid - Updated Structure */}
         <div className="final-adjacent-collections">
