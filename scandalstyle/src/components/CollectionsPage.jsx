@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import "./CollectionsPage.css"
+import Sidebar from "./Sidebar"
 import grunge from "../assets/grunge1.jpeg";
 import punk from "../assets/punk2.png";
 import goth from "../assets/goth.png";
@@ -21,7 +22,7 @@ import punky from "../assets/punky.jpg";
 import gothy from "../assets/gothy.jpg";
 
 
-const CollectionsPage = () => {
+const CollectionsPage = ({ onBack, onTeamClick, onContactClick }) => {
   const [currentY2KImage, setCurrentY2KImage] = useState(0)
   const [currentGrungeImage, setCurrentGrungeImage] = useState(0)
 
@@ -55,9 +56,46 @@ const CollectionsPage = () => {
     setCurrentGrungeImage((prev) => (prev - 1 + grungeImages.length) % grungeImages.length)
   }
 
+  // Scroll to top of collections page
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Handle navigation from sidebar
+  const handleHomeClick = () => {
+    onBack(); // Go back to CriminalCouturePage
+  };
+
+  const handleCollectionsClick = () => {
+    scrollToTop(); // Stay on collections page, scroll to top
+  };
+
+  const handleTeamClick = () => {
+    onBack(); // Go back to home first
+    // Use setTimeout to ensure we're back on home page before scrolling
+    setTimeout(() => {
+      onTeamClick?.();
+    }, 100);
+  };
+
+  const handleContactClick = () => {
+    onBack(); // Go back to home first
+    // Use setTimeout to ensure we're back on home page before scrolling
+    setTimeout(() => {
+      onContactClick?.();
+    }, 100);
+  };
 
   return (
     <div className="collections-page">
+      {/* Add Sidebar to Collections Page */}
+      <Sidebar
+        onHomeClick={handleHomeClick}
+        onCollectionsClick={handleCollectionsClick}
+        onTeamClick={handleTeamClick}
+        onContactClick={handleContactClick}
+      />
+
       {/* Header Strip Tape */}
       <div className="header-tape">
         <div className="logo-strip">
