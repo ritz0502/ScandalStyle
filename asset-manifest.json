@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ScandalStyle/static/css/main.026b91a3.css",
-    "main.js": "/ScandalStyle/static/js/main.67d707ae.js",
+    "main.js": "/ScandalStyle/static/js/main.fe05c71c.js",
     "static/js/453.f25c15cb.chunk.js": "/ScandalStyle/static/js/453.f25c15cb.chunk.js",
     "static/media/y2k.png": "/ScandalStyle/static/media/y2k.781c07a8d11630eef0f8.png",
     "static/media/punk2.png": "/ScandalStyle/static/media/punk2.fecef0710fb8052993da.png",
@@ -32,11 +32,11 @@
     "static/media/fashion4.webp": "/ScandalStyle/static/media/fashion4.735f668431302ee9aff3.webp",
     "index.html": "/ScandalStyle/index.html",
     "main.026b91a3.css.map": "/ScandalStyle/static/css/main.026b91a3.css.map",
-    "main.67d707ae.js.map": "/ScandalStyle/static/js/main.67d707ae.js.map",
+    "main.fe05c71c.js.map": "/ScandalStyle/static/js/main.fe05c71c.js.map",
     "453.f25c15cb.chunk.js.map": "/ScandalStyle/static/js/453.f25c15cb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.026b91a3.css",
-    "static/js/main.67d707ae.js"
+    "static/js/main.fe05c71c.js"
   ]
 }
