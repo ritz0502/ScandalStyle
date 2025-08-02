@@ -198,7 +198,7 @@ const CollectionsPage = ({ onBack, onTeamClick, onContactClick }) => {
           <div className="collection-grid">
             {/* Top-Left: Text and button only */}
             <div className="grid-item retro-vice-1 text-only">
-              <div className="item-overlay centered-overlay">
+              <div className="final-item-overlay centered-overlay">
                 <h4>RETRO VIBES</h4>
                 <button className="shop-now-btn">SHOP NOW</button>
               </div>
@@ -216,7 +216,7 @@ const CollectionsPage = ({ onBack, onTeamClick, onContactClick }) => {
 
             {/* Bottom-Right: Text and button only */}
             <div className="grid-item toxic-90s-2 text-only">
-              <div className="item-overlay centered-overlay">
+              <div className="final-item-overlay centered-overlay">
                 <h4>TOXIC 90S</h4>
                 <button className="shop-now-btn">SHOP NOW</button>
               </div>

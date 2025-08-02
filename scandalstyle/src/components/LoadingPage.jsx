@@ -223,7 +223,7 @@ useEffect(() => {
           left: -5%;
           top: 50%;
           transform: translateY(-50%);
-          width: 1100px;
+          width: 100%;
           height: auto;
           opacity: 0.2;
           z-index: 1;
